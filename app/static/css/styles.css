@@ -1,0 +1,108 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #4f8cff, #6dd5fa, #ffffff);
+    color: #333;
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: #004aad;
+    padding: 1rem 0;
+    color: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.navbar .logo {
+    margin: 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Card Layout */
+.card {
+    background: white;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.card-title {
+    margin-bottom: 1.5rem;
+    color: #004aad;
+}
+
+/* Form */
+.form-group {
+    text-align: left;
+    margin-bottom: 1.2rem;
+}
+
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border 0.2s;
+}
+
+input:focus {
+    border-color: #004aad;
+    outline: none;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #004aad;
+    color: white;
+    padding: 0.8rem;
+    width: 100%;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #00337a;
+}
+
+/* Alerts */
+.alert {
+    padding: 0.8rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.alert.error {
+    background: #f8d7da;
+    color: #721c24;
+}
+
+.alert.success {
+    background: #d4edda;
+    color: #155724;
+}
