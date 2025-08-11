@@ -41,6 +41,84 @@ The application allows users to log in using an **email** and **password**, with
 
 ---
 
+## Bug Report
+
+**Bug Title:** Valid credentials redirect back to login page without error  
+
+**Jira Link:** [SQT-1](https://doesnment-team.atlassian.net/browse/SQT-1)  
+
+**Description:**  
+
+**Steps to Reproduce:**  
+1. Navigate to the login page (`http://localhost:5000/login`).  
+2. Enter valid email credentials: `user@example.com`.  
+3. Enter valid password: `password123`.  
+4. Click the **Login** button.  
+5. Observe the page behaviour.  
+
+**Expected Result:**  
+- User should be successfully authenticated.  
+- User should be redirected to the dashboard page (`/dashboard`).  
+- Dashboard should display a welcome message with the user’s email.  
+- A success message `"Login successful!"` should be shown.  
+
+**Actual Result:**  
+- User is redirected back to the login page (`/login`).  
+- No error message is displayed.  
+- No success message is shown.  
+- User remains unauthenticated.  
+- Dashboard is not accessible.  
+
+**Additional Information:**  
+- Issue occurs consistently with all valid credential combinations.  
+- Browser network tab shows successful POST request to `/login` endpoint.  
+- No JavaScript console errors observed.  
+- Session data appears to not be persisting correctly.  
+- Affects all test user accounts:  
+  - `user@example.com`  
+  - `admin@test.com`  
+  - `john.doe@company.com`  
+
+**Priority:** High  
+**Labels:** login, critical, regression  
+**Status:** Open  
+**Reported By:** QA Tester  
+
+---
+
+## Question 3 – Agile Scenario Task (Summary)
+
+As part of the sprint team, the following Jira issues were assigned:  
+- **Feature-101:** Implement login  
+- **Bug-208:** Login redirects to wrong page  
+- **Task-330:** Create regression test suite  
+
+**Workflow Summary:**
+1. **Sprint Planning:**  
+   - Reviewed user stories and clarified acceptance criteria for Feature-101.  
+   - Identified potential risk areas and created QA subtasks (test case creation, manual testing, automation).  
+
+2. **During Development:**  
+   - Wrote test cases in parallel while developers worked on implementation.  
+   - Linked test cases to Jira stories for traceability.  
+
+3. **Testing Phase:**  
+   - Executed manual test cases for Feature-101 once a testable build was available.  
+   - Logged Bug-208 in Jira with detailed reproduction steps and linked it to Feature-101.  
+
+4. **Bug Verification & Regression:**  
+   - Retested Bug-208 after fix, ensuring no regression in related features.  
+   - Updated Task-330 by adding critical scenarios to the regression suite.  
+
+5. **Tracking & Collaboration:**  
+   - Updated test case statuses in Jira immediately after execution (Pass, Fail, Blocked).  
+   - Used a Jira dashboard to track progress with filters for “QA Coverage” and “Defect Status”.  
+   - Collaborated with developers via daily stand-ups and Jira comments to resolve issues quickly.
+
+**Outcome:**  
+This approach ensured clear communication, full test coverage visibility on the Jira board, and quick turnaround on bug fixes while maintaining sprint timelines.
+
+
 ## Notes
 - All tests are implemented in **Playwright** using **TypeScript** and follow the **Page Object Model (POM)** design pattern.
 - Tests are located in the `tests/e2e/` directory.
